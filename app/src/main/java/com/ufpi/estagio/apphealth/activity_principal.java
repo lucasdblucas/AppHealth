@@ -1,5 +1,6 @@
 package com.ufpi.estagio.apphealth;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,18 +13,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class activity_principal extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 
     private Toolbar toolBar_01;
     private FloatingActionButton actionButton;
     private NavigationView navigationView;
 
+    //componentes da listView
+    private List<String> nomes_avaliados;
+    private String[] tipoStatus_envio_cliente;
+    private TypedArray profile_pics;
+    private List<ItemLinha> avaliacoes;
+    private ListView myListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+        //consultar o banco de dados e retornar as avlaições existentes
+        inicializarListView();
 
         toolBar_01 = (Toolbar) findViewById(R.id.toolbar);
         toolBar_01.setTitle("");
@@ -103,5 +120,44 @@ public class activity_principal extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    //Esse método é sobreescrevido da classe OnClckListener implementado por essa activity
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        String nome_avaliado = avaliacoes.get(position).getNome_avaliado();
+        Toast.makeText(getApplicationContext(), "" + nome_avaliado,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private void inicializarListView(){
+        avaliacoes = new ArrayList<>();
+
+        /*nomes avaliados mais adiante será fornecido pelo banco de dados
+        a principio enquanto o banco de dados não é implementado, essas informações serão
+        iniciadas estaticamente*/
+        nomes_avaliados = new ArrayList<>();
+        nomes_avaliados. add("Lucas Daniel");
+        nomes_avaliados. add("Dona Rosa");
+        nomes_avaliados. add("Seu Raimundo");
+        nomes_avaliados. add("Seu Domingos");
+        nomes_avaliados. add("Dona Lurdes");
+
+        //profile_pics.getResourceID(i, -1),
+
+        tipoStatus_envio_cliente = getResources().getStringArray(R.array.statues_envio_cliente);
+
+        for(int i=0; i<nomes_avaliados.size(); i++){
+            ItemLinha item_aux = new ItemLinha(nomes_avaliados.get(i), 200, "Enviado");
+            avaliacoes.add(item_aux);
+        }
+
+        myListView = (ListView) findViewById(R.id.list_avaliacao);
+        CustomListView_Adapter adapter = new CustomListView_Adapter(this, avaliacoes);
+        myListView.setAdapter(adapter);
+        //profile_pics.recycle();
+
+        myListView.setOnItemClickListener(this);
     }
 }

@@ -5,4 +5,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!--strings dos itens do listView-->
+    <string-array name="statues_envio_cliente">
+        <item>Enviado</item>
+        <item>Não Enviado</item>
+    </string-array>
 </resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp">
+
+    <!--icone do avaliado, a pricípio definiremos como uma letra.
+    Provavelmente a primeira ou as duas primeiras letras do nome do
+    avaliado
+
+    mudar para CircleImageView depois de testado-->
+    <ImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+    <!--android:contentDescription="desc"-->
+
+    <!--nome do avaliado-->
+    <TextView
+        android:id="@+id/nome_avaliado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/profile_pic"
+        android:paddingBottom="10dp"
+        android:text="text"
+        android:textSize="20dp"/>
+
+
+    <!--descrição do avaliado:
+    a descrição pode ser o resultado da avaliação do idoso
+    tipo: rendimento alto, baixo, muito baixo ou sem resultados
+    caso não tenha sido realizado a avaliação ainda. O que pode
+    sugerir perigo a saúde do avaliado ou não>
+
+    <TextView
+        android:id="@+id/status_avaliado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nome_Avaliado"
+        android:layout_below="@+id/nome_Avaliado"
+        android:text="text"
+        android:textSize="16dp"/-->
+
+    <!--status de envio. diz se o testo foi enviado ou não para o
+    cliente-->
+    <TextView
+        android:id="@+id/status_evio_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nome_avaliado"
+        android:layout_alignBottom="@+id/nome_avaliado"
+        android:layout_alignParentRight="true"
+        android:text="text"
+        android:textSize="16sp" />
+
+</RelativeLayout>

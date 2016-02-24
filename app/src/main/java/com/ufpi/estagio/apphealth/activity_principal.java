@@ -31,7 +31,7 @@ public class activity_principal extends AppCompatActivity
     private List<String> nomes_avaliados;
     private String[] tipoStatus_envio_cliente;
     private TypedArray profile_pics;
-    private List<itemLinhatest> avaliacoes;
+    private List<ItemLinha> avaliacoes;
     private ListView myListView;
 
     @Override
@@ -149,7 +149,7 @@ public class activity_principal extends AppCompatActivity
         tipoStatus_envio_cliente = getResources().getStringArray(R.array.statues_envio_cliente);
 
         for(int i=0; i<nomes_avaliados.size(); i++){
-            itemLinhatest item_aux = new itemLinhatest(nomes_avaliados.get(i), 200, "Enviado");
+            ItemLinha item_aux = new ItemLinha(nomes_avaliados.get(i), 200, "Enviado");
             avaliacoes.add(item_aux);
         }
 

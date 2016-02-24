@@ -2,7 +2,6 @@ package com.ufpi.estagio.apphealth;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,9 @@ import java.util.List;
  */
 public class CustomListView_Adapter extends BaseAdapter {
     Context context;
-    List<ItemLinha> itens_linha;
+    List<itemLinha> itens_linha;
 
-    public CustomListView_Adapter(Context context, List<ItemLinha> itens_linha) {
+    public CustomListView_Adapter(Context context, List<itemLinha> itens_linha) {
         this.context = context;
         this.itens_linha = itens_linha;
     }
@@ -66,7 +65,7 @@ public class CustomListView_Adapter extends BaseAdapter {
             suporte = (ViewSuporte) convertView.getTag();
         }
 
-        ItemLinha linha_pos = itens_linha.get(position);
+        itemLinha linha_pos = itens_linha.get(position);
 
         suporte.profile_pic.setImageResource(linha_pos.getProfile_pic_ID());
         suporte.profile_pic.setImageResource(linha_pos.getProfile_pic_ID());

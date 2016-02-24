@@ -16,9 +16,9 @@ import java.util.List;
  */
 public class CustomListView_Adapter extends BaseAdapter {
     Context context;
-    List<itemLinha> itens_linha;
+    List<itemLinhatest> itens_linha;
 
-    public CustomListView_Adapter(Context context, List<itemLinha> itens_linha) {
+    public CustomListView_Adapter(Context context, List<itemLinhatest> itens_linha) {
         this.context = context;
         this.itens_linha = itens_linha;
     }
@@ -65,7 +65,7 @@ public class CustomListView_Adapter extends BaseAdapter {
             suporte = (ViewSuporte) convertView.getTag();
         }
 
-        itemLinha linha_pos = itens_linha.get(position);
+        itemLinhatest linha_pos = itens_linha.get(position);
 
         suporte.profile_pic.setImageResource(linha_pos.getProfile_pic_ID());
         suporte.profile_pic.setImageResource(linha_pos.getProfile_pic_ID());

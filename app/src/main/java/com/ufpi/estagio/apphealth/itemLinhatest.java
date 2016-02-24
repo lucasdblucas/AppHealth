@@ -3,14 +3,14 @@ package com.ufpi.estagio.apphealth;
 /**
  * Created by lucas on 23/02/2016.
  */
-public class itemLinha {
+public class itemLinhatest {
     private String nome_avaliado;
     private int profile_pic_ID;
     //private String status_avaliacao;
 
     private String status_envio_cliente;
 
-    public itemLinha(String nome_avaliado, int profile_pic_ID, String status_envio_cliente){
+    public itemLinhatest(String nome_avaliado, int profile_pic_ID, String status_envio_cliente){
         this.nome_avaliado = nome_avaliado;
         this.profile_pic_ID = profile_pic_ID;
         this.status_envio_cliente = status_envio_cliente;

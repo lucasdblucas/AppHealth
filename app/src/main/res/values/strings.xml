@@ -7,6 +7,11 @@
     <string name="action_settings">Settings</string>
 
     <!--strings dos itens do listView-->
+    <array name="profile_pics">
+        <item>@drawable/imagem_teste</item>
+        <item>@drawable/imagem_teste2</item>
+    </array>
+
     <string-array name="statues_envio_cliente">
         <item>Enviado</item>
         <item>Não Enviado</item>

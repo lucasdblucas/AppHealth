@@ -42,7 +42,6 @@ public class CustomListView_Adapter extends BaseAdapter {
     private class ViewSuporte {
         ImageView profile_pic;
         TextView nome_avaliado;
-        //TextView status;
         TextView status_envio_cliente;
     }
 
@@ -68,10 +67,8 @@ public class CustomListView_Adapter extends BaseAdapter {
         ItemLinha linha_pos = itens_linha.get(position);
 
         suporte.profile_pic.setImageResource(linha_pos.getProfile_pic_ID());
-        suporte.profile_pic.setImageResource(linha_pos.getProfile_pic_ID());
         suporte.nome_avaliado.setText(linha_pos.getNome_avaliado());
         suporte.status_envio_cliente.setText(linha_pos.getStatus_envio_cliente());
-        //suporte.contactType.setText(row_pos.getContactType());
 
         return convertView;
     }

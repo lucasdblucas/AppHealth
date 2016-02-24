@@ -144,19 +144,19 @@ public class activity_principal extends AppCompatActivity
         nomes_avaliados. add("Seu Domingos");
         nomes_avaliados. add("Dona Lurdes");
 
-        //profile_pics.getResourceID(i, -1),
-
+        profile_pics = getResources().obtainTypedArray(R.array.profile_pics);
         tipoStatus_envio_cliente = getResources().getStringArray(R.array.statues_envio_cliente);
 
         for(int i=0; i<nomes_avaliados.size(); i++){
-            ItemLinha item_aux = new ItemLinha(nomes_avaliados.get(i), 200, "Enviado");
+            ItemLinha item_aux = new ItemLinha(nomes_avaliados.get(i), profile_pics.getResourceId(i%2, -1), "Enviado");
             avaliacoes.add(item_aux);
         }
 
         myListView = (ListView) findViewById(R.id.list_avaliacao);
         CustomListView_Adapter adapter = new CustomListView_Adapter(this, avaliacoes);
         myListView.setAdapter(adapter);
-        //profile_pics.recycle();
+
+        profile_pics.recycle();
 
         myListView.setOnItemClickListener(this);
     }

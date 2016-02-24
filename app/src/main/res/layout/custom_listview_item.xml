@@ -15,9 +15,12 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
-    <!--android:contentDescription="desc"-->
+        android:paddingLeft="16dp"
+         />
+    <!-- retirado do componente logo acima
+    android:contentDescription="desc"
+    android:paddingRight="10dp"
+    -->
 
     <!--nome do avaliado-->
     <TextView
@@ -25,18 +28,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/profile_pic"
+        android:paddingLeft="72dp"
         android:paddingBottom="10dp"
         android:text="text"
         android:textSize="20dp"/>
-
+    <!-- retirado do componente acima
+    android:layout_toRightOf="@+id/profile_pic"
+    -->
 
     <!--descrição do avaliado:
     a descrição pode ser o resultado da avaliação do idoso
     tipo: rendimento alto, baixo, muito baixo ou sem resultados
     caso não tenha sido realizado a avaliação ainda. O que pode
     sugerir perigo a saúde do avaliado ou não>
-
     <TextView
         android:id="@+id/status_avaliado"
         android:layout_width="wrap_content"
@@ -45,6 +49,7 @@
         android:layout_below="@+id/nome_Avaliado"
         android:text="text"
         android:textSize="16dp"/-->
+
 
     <!--status de envio. diz se o testo foi enviado ou não para o
     cliente-->

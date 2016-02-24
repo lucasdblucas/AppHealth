@@ -18,7 +18,7 @@
 
     <include layout="@layout/custom_listview" />
 
-    <!-- verificar depois a necessidade dessa parte
+    <!-- verificar depois a necessidade da bottom bar
 
     android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_activity_principal"

@@ -78,6 +78,64 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="15dp" />
 
+    <TextView
+        android:id="@+id/text_Idade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Genero"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="70dp"
+        android:text="@string/text_Idade" />
+
+    <EditText
+        android:id="@+id/field_Idade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Idade"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/field_Peso"
+        android:layout_toStartOf="@+id/field_Peso" />
+
+    <TextView
+        android:id="@+id/text_SituacaoFisica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/field_Idade"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_SituacaoFisica"/>
+
+    <include layout="@layout/radiobutton_situacaofisica_nova_avaliacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_SituacaoFisica"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/button_Salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_SituacaoFisica"
+        android:layout_marginTop="80dp"
+        android:text="@string/text_Salvar"
+        android:layout_toLeftOf="@+id/button_SalvarEIniciar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/button_SalvarEIniciar"
+        android:color="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/button_SalvarEIniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_SituacaoFisica"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/text_SalvarEIniciar"
+        android:layout_alignLeft="@+id/field_Peso"
+        android:layout_alignStart="@+id/field_Peso"
+        android:color="@color/colorPrimary"/>
 
 
 </RelativeLayout>

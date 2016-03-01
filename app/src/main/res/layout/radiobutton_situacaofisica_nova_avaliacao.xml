@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <RadioButton
+        android:id="@+id/radio_Ativo"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:text="Ativo"
+        android:textColor="@color/cinzaAuxiliar"/>
+    <!--retirado do componente acima
+        android:onClick="onRadioButtonClicked-->
+
+    <RadioButton
+        android:id="@+id/radio_Inativo"
+        android:layout_width="197dp"
+        android:layout_height="wrap_content"
+        android:text="Inativo"
+        android:textColor="@color/cinzaAuxiliar"/>
+
+</RadioGroup>

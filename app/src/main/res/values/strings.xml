@@ -25,4 +25,10 @@
     <string name="text_Genero">Genero:</string>
     <string name="radio_Homem">Homem</string>
     <string name="radio_Mulher">Mulher</string>
+    <string name="radio_Ativo">Ativo</string>
+    <string name="radio_Inativo">Inativo</string>
+    <string name="text_SituacaoFisica">Situação Física:</string>
+    <string name="text_Idade">Idade:</string>
+    <string name="text_Salvar">Salvar</string>
+    <string name="text_SalvarEIniciar">Salvar e Iniciar Avaliação</string>
 </resources>

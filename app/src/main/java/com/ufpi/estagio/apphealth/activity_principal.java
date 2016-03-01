@@ -1,5 +1,6 @@
 package com.ufpi.estagio.apphealth;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -27,6 +28,9 @@ public class activity_principal extends AppCompatActivity
     private FloatingActionButton actionButton;
     private NavigationView navigationView;
 
+    //conteudo de Intent
+    public final static String EXTRA_MESSAGE = "com.ufpi.estagio.apphealth.MESSAGE";
+
     //componentes da listView
     private List<String> nomes_avaliados;
     private String[] tipoStatus_envio_cliente;
@@ -50,8 +54,12 @@ public class activity_principal extends AppCompatActivity
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                Intent intent = new Intent( view.getContext(), tela_NovaAvaliacao.class);
+                //intent.putExtra(EXTRA_MESSAGE, new String());
+                startActivity(intent);
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
             }
         });
 
@@ -138,6 +146,16 @@ public class activity_principal extends AppCompatActivity
         a principio enquanto o banco de dados não é implementado, essas informações serão
         iniciadas estaticamente*/
         nomes_avaliados = new ArrayList<>();
+        nomes_avaliados. add("Lucas Daniel");
+        nomes_avaliados. add("Dona Rosa");
+        nomes_avaliados. add("Seu Raimundo");
+        nomes_avaliados. add("Seu Domingos");
+        nomes_avaliados. add("Dona Lurdes");
+        nomes_avaliados. add("Lucas Daniel");
+        nomes_avaliados. add("Dona Rosa");
+        nomes_avaliados. add("Seu Raimundo");
+        nomes_avaliados. add("Seu Domingos");
+        nomes_avaliados. add("Dona Lurdes");
         nomes_avaliados. add("Lucas Daniel");
         nomes_avaliados. add("Dona Rosa");
         nomes_avaliados. add("Seu Raimundo");

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ufpi.estagio.apphealth.tela_NovaAvaliacao"
+    tools:showIn="@layout/activity_tela__nova_avaliacao">
+
+    <TextView
+        android:id="@+id/text_Nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/nome_Avaliado"
+        />
+
+    <EditText
+        android:id="@+id/field_Nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Nome"
+        />
+
+    <TextView
+        android:id="@+id/text_Altura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/field_Nome"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_Altura"
+        />
+
+    <EditText
+        android:id="@+id/field_Altura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Altura"
+        android:layout_toLeftOf="@+id/text_Peso" />
+
+    <TextView
+        android:id="@+id/text_Peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/field_Altura"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="20dp"
+        android:text="@string/text_Peso" />
+
+    <EditText
+        android:id="@+id/field_Peso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Peso"
+        android:layout_toRightOf="@+id/field_Altura"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/text_Genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/field_Altura"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_Genero"/>
+
+    <include layout="@layout/radiobuttom_nova_avaliacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Genero"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="15dp" />
+
+
+
+</RelativeLayout>

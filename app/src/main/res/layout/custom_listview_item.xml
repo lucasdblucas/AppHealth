@@ -12,10 +12,10 @@
     mudar para CircleImageView depois de testado-->
     <ImageView
         android:id="@+id/profile_pic"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_gravity="center_vertical"
-        android:paddingLeft="16dp"
+        android:paddingLeft="10dp"
          />
     <!-- retirado do componente logo acima
     android:contentDescription="desc"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:paddingLeft="72dp"
+        android:paddingLeft="80dp"
         android:paddingBottom="10dp"
         android:text="text"
         android:textSize="20dp"/>

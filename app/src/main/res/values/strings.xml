@@ -16,4 +16,13 @@
         <item>Enviado</item>
         <item>Não Enviado</item>
     </string-array>
+
+    <!--strings da tela de nova Avaliação-->
+    <string name="title_activity_tela__nova_avaliacao">tela_NovaAvaliacao</string>
+    <string name="nome_Avaliado">Nome:</string>
+    <string name="text_Altura">Altura:</string>
+    <string name="text_Peso">Peso:</string>
+    <string name="text_Genero">Genero:</string>
+    <string name="radio_Homem">Homem</string>
+    <string name="radio_Mulher">Mulher</string>
 </resources>

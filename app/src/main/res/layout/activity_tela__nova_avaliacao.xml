@@ -21,7 +21,15 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_tela__nova_avaliacao" />
+    <include layout="@layout/scroll_tela_nova_avaliacao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"/>
+
+
+
+
+
 
 
 

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.ufpi.estagio.apphealth.tela_NovaAvaliacao"
-    tools:showIn="@layout/activity_tela__nova_avaliacao">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <TextView
         android:id="@+id/text_Nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:text="@string/nome_Avaliado"
         />
 
@@ -31,7 +28,6 @@
         android:id="@+id/text_Altura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/field_Nome"
         android:layout_marginTop="20dp"
         android:text="@string/text_Altura"
@@ -42,7 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_Altura"
-        android:layout_toLeftOf="@+id/text_Peso" />
+        android:layout_toLeftOf="@+id/text_Peso"
+        android:layout_toStartOf="@+id/text_Peso"/>
 
     <TextView
         android:id="@+id/text_Peso"
@@ -50,6 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/field_Altura"
         android:layout_centerHorizontal="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:paddingLeft="20dp"
         android:text="@string/text_Peso" />
 
@@ -59,32 +58,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_Peso"
         android:layout_toRightOf="@+id/field_Altura"
+        android:layout_toEndOf="@+id/field_Altura"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="20dp" />
-
-    <TextView
-        android:id="@+id/text_Genero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/field_Altura"
-        android:layout_marginTop="20dp"
-        android:text="@string/text_Genero"/>
-
-    <include layout="@layout/radiobuttom_nova_avaliacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_Genero"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="15dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"/>
 
     <TextView
         android:id="@+id/text_Idade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_Genero"
+        android:layout_below="@+id/field_Altura"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
         android:text="@string/text_Idade" />
 
     <EditText
@@ -93,16 +80,37 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_Idade"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/field_Peso"
         android:layout_toStartOf="@+id/field_Peso" />
+
+    <TextView
+        android:id="@+id/text_Genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/field_Idade"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_Genero"/>
+
+    <include layout="@layout/radiobuttom_nova_avaliacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Genero"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
 
     <TextView
         android:id="@+id/text_SituacaoFisica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/field_Idade"
-        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_Genero"
+        android:layout_marginTop="70dp"
         android:text="@string/text_SituacaoFisica"/>
 
     <include layout="@layout/radiobutton_situacaofisica_nova_avaliacao"
@@ -110,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_SituacaoFisica"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_marginTop="15dp" />
 
     <Button
@@ -119,11 +128,12 @@
         android:layout_below="@+id/text_SituacaoFisica"
         android:layout_marginTop="80dp"
         android:text="@string/text_Salvar"
-        android:layout_toLeftOf="@+id/button_SalvarEIniciar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignBottom="@+id/button_SalvarEIniciar"
-        android:color="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+        android:layout_toLeftOf="@+id/field_Peso"
+        android:layout_toStartOf="@+id/field_Peso" />
 
     <Button
         android:id="@+id/button_SalvarEIniciar"
@@ -131,11 +141,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_SituacaoFisica"
         android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:text="@string/text_SalvarEIniciar"
+        android:background="@color/colorPrimary"
         android:layout_alignLeft="@+id/field_Peso"
-        android:layout_alignStart="@+id/field_Peso"
-        android:color="@color/colorPrimary"/>
-
+        android:layout_alignStart="@+id/field_Peso" />
 
 </RelativeLayout>

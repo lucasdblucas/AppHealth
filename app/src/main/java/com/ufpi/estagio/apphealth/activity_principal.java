@@ -47,7 +47,7 @@ public class activity_principal extends AppCompatActivity
         inicializarListView();
 
         toolBar_01 = (Toolbar) findViewById(R.id.toolbar);
-        toolBar_01.setTitle("");
+        toolBar_01.setTitle("Avaliações");
         setSupportActionBar(toolBar_01);
 
         actionButton = (FloatingActionButton) findViewById(R.id.fab);
@@ -130,7 +130,7 @@ public class activity_principal extends AppCompatActivity
         return true;
     }
 
-    //Esse método é sobreescrevido da classe OnClckListener implementado por essa activity
+    //Esse método é sobreescrevido da classe OnClickListener implementado por essa activity
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 

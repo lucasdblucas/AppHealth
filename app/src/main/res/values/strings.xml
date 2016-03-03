@@ -6,6 +6,13 @@
 
     <string name="action_settings">Settings</string>
 
+    <!--strings da activity inicial-->
+    <string name="text_appHealth"><b>appHealth</b></string>
+    <string name="hint_Usuario">Usuário</string>
+    <string name="hint_Senha">Senha</string>
+    <string name="button_Entrar">Entrar</string>
+    <string name="button_Cadastrar">Cadastrar</string>
+
     <!--strings dos itens do listView-->
     <array name="profile_pics">
         <item>@drawable/imagem_teste</item>
@@ -29,6 +36,9 @@
     <string name="radio_Inativo">Inativo</string>
     <string name="text_SituacaoFisica">Situação Física:</string>
     <string name="text_Idade">Idade:</string>
-    <string name="text_Salvar">Salvar</string>
+    <string name="text_Salvar">Salvar e Voltar</string>
     <string name="text_SalvarEIniciar">Salvar e Iniciar Avaliação</string>
+
+
+    <string name="title_activity_iniciar_app_health">Iniciar_appHealth</string>
 </resources>

@@ -133,7 +133,8 @@
         android:layout_alignBottom="@+id/button_SalvarEIniciar"
         android:background="@color/colorPrimary"
         android:layout_toLeftOf="@+id/field_Peso"
-        android:layout_toStartOf="@+id/field_Peso" />
+        android:layout_toStartOf="@+id/field_Peso"
+        android:onClick="onClick_SalvarEVoltar"/>
 
     <Button
         android:id="@+id/button_SalvarEIniciar"
@@ -148,6 +149,7 @@
         android:text="@string/text_SalvarEIniciar"
         android:background="@color/colorPrimary"
         android:layout_alignLeft="@+id/field_Peso"
-        android:layout_alignStart="@+id/field_Peso" />
+        android:layout_alignStart="@+id/field_Peso"
+        android:onClick="onClick_SalvarEIniciarAvaliacao"/>
 
 </RelativeLayout>

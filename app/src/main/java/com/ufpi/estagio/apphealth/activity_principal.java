@@ -177,5 +177,6 @@ public class activity_principal extends AppCompatActivity
         profile_pics.recycle();
 
         myListView.setOnItemClickListener(this);
+        //myListView.setOnLongClickListener();
     }
 }

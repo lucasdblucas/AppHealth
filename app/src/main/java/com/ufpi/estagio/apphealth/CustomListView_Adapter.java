@@ -43,6 +43,7 @@ public class CustomListView_Adapter extends BaseAdapter {
         ImageView profile_pic;
         TextView nome_avaliado;
         TextView status_envio_cliente;
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.ufpi.estagio.apphealth;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -32,14 +33,26 @@ public class tela_NovaAvaliacao extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case android.R.id.home:
-                Intent intent = new Intent(this, activity_principal.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//se a activity do intent ja estiver "rodando", ela será
-                                                                //reaproveitada e todas as activitys acima dela na pilhas
-                                                                //serão "limpas"
-                startActivity(intent);
+                iniciarOutraActivity(this, activity_principal.class, Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void iniciarOutraActivity(Context context, Class classe, int flag){
+        Intent intent = new Intent(context, classe);
+        if (flag != -999) intent.addFlags(flag);//se a activity do intent ja estiver "rodando", ela será
+        //reaproveitada e todas as activitys acima dela na pilhas
+        //serão "limpas"
+        startActivity(intent);
+    }
+
+    public void onClick_SalvarEVoltar(View view){
+        iniciarOutraActivity(this, activity_principal.class, Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    }
+
+    public void onClick_SalvarEIniciarAvaliacao(View view){
+        iniciarOutraActivity(this, tela_Testes.class, -999);
     }
 }

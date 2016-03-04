@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.ufpi.estagio.apphealth.ItemCard;
@@ -19,6 +20,7 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adap
 
     private List<ItemCard> minha_List;
     private LayoutInflater meu_LayoutInflater;
+    public View v;
 
     public RecyclerView_Adapter (Context c, List<ItemCard> list){
         this.minha_List = list;
@@ -28,7 +30,8 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adap
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i){
 
-        View v = meu_LayoutInflater.inflate(R.layout.item_cardview, viewGroup, false);
+        v = meu_LayoutInflater.inflate(R.layout.item_cardview, viewGroup, false);
+
         MyViewHolder mvh = new MyViewHolder(v);
 
         return mvh;

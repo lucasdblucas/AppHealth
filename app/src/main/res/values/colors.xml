@@ -5,4 +5,7 @@
     <color name="colorAccent">#8BC34A</color>
 
     <color name="cinzaAuxiliar">#727272</color>
+    <color name="silver">#7F8C8D</color>
+    <color name="color_background">#ECF0F1</color>
+
 </resources>

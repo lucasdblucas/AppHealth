@@ -1,6 +1,5 @@
 package com.ufpi.estagio.apphealth.Activity_telaTestes;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -64,6 +63,18 @@ public class CardFragment extends android.support.v4.app.Fragment {
         RecyclerView_Adapter adapter = new RecyclerView_Adapter(getActivity(), listCard);
         recyclerView.setAdapter(adapter);
 
+        //button = (ImageButton) itemView.findViewById(R.id.image_button);
+
+       // button.setOnClickListener(new View.OnClickListener() {
+           // @Override
+         //   public void onClick(View view) {
+          //      TextView text_aux = (TextView) v.findViewById(R.id.text_conteudo);
+           //     text_aux.setVisibility(View.GONE);
+                //else text_aux.setVisibility(View.GONE);
+          //  }
+        //});
+
+        recyclerView.setVerticalScrollBarEnabled(false);
         return view;
     }
 }

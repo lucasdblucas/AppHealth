@@ -39,6 +39,11 @@
     <string name="text_Salvar">Salvar e Voltar</string>
     <string name="text_SalvarEIniciar">Salvar e Iniciar Avaliação</string>
 
+    <!--strings da tela de testes-->
+    <string name="button_Resultados">Resultados :</string>
+    <string name="button_Proximo">Proximo Teste</string>
+
+
 
     <string name="title_activity_iniciar_app_health">Iniciar_appHealth</string>
 </resources>

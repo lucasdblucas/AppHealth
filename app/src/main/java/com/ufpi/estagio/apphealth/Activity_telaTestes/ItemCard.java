@@ -1,4 +1,4 @@
-package com.ufpi.estagio.apphealth;
+package com.ufpi.estagio.apphealth.Activity_telaTestes;
 
 /**
  * Created by lucas on 03/03/2016.

@@ -1,10 +1,9 @@
-package com.ufpi.estagio.apphealth;
+package com.ufpi.estagio.apphealth.Avaliacoes_tela;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,6 +16,9 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.ufpi.estagio.apphealth.R;
+import com.ufpi.estagio.apphealth.NovaAvaliacao_tela.tela_NovaAvaliacao;
 
 import java.util.ArrayList;
 import java.util.List;

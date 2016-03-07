@@ -1,16 +1,16 @@
-package com.ufpi.estagio.apphealth;
+package com.ufpi.estagio.apphealth.NovaAvaliacao_tela;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.ufpi.estagio.apphealth.Avaliacoes_tela.activity_principal;
+import com.ufpi.estagio.apphealth.R;
+import com.ufpi.estagio.apphealth.Activity_telaTestes.tela_Testes;
 
 public class tela_NovaAvaliacao extends AppCompatActivity {
 

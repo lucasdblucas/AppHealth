@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ufpi.estagio.apphealth.ItemCard;
 import com.ufpi.estagio.apphealth.R;
-import com.ufpi.estagio.apphealth.tela_Testes;
 
 import java.util.List;
 

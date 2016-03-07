@@ -1,4 +1,4 @@
-package com.ufpi.estagio.apphealth;
+package com.ufpi.estagio.apphealth.Avaliacoes_tela;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.ufpi.estagio.apphealth.R;
 
 import java.util.List;
 

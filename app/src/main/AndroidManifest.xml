@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity_principal"
+            android:name=".Avaliacoes_tela.activity_principal"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
@@ -22,11 +22,11 @@
             -->
         </activity>
         <activity
-            android:name=".tela_NovaAvaliacao"
+            android:name=".NovaAvaliacao_tela.tela_NovaAvaliacao"
             android:label="@string/title_activity_tela__nova_avaliacao"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Iniciar_appHealth"
+            android:name=".Iniciar_tela.Iniciar_appHealth"
             android:label="@string/title_activity_iniciar_app_health"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -35,7 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tela_Testes"></activity>
+        <activity android:name=".Activity_telaTestes.tela_Testes"></activity>
     </application>
 
 </manifest>

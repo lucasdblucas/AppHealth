@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ufpi.estagio.apphealth.Iniciar_appHealth">
+    tools:context=".Iniciar_tela.Iniciar_appHealth">
 
     <include layout="@layout/content_iniciar_app_health" />
 

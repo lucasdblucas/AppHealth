@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.ufpi.estagio.apphealth.activity_principal"
+    tools:context=".Avaliacoes_tela.activity_principal"
     tools:showIn="@layout/app_bar_activity_principal">
 
     <!--retirado da tag logo acima

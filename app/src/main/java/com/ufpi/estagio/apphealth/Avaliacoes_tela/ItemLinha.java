@@ -1,4 +1,4 @@
-package com.ufpi.estagio.apphealth;
+package com.ufpi.estagio.apphealth.Avaliacoes_tela;
 
 /**
  * Created by lucas on 23/02/2016.

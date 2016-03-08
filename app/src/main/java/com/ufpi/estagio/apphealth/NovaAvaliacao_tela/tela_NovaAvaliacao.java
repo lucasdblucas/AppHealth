@@ -15,6 +15,7 @@ import com.ufpi.estagio.apphealth.Activity_telaTestes.tela_Testes;
 public class tela_NovaAvaliacao extends AppCompatActivity {
 
     private Toolbar toolbar;
+    public final static String EXTRA_MESSAGE = "com.ufpi.estagio.apphealth.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,10 @@ public class tela_NovaAvaliacao extends AppCompatActivity {
         if (flag != -999) intent.addFlags(flag);//se a activity do intent ja estiver "rodando", ela será
         //reaproveitada e todas as activitys acima dela na pilhas
         //serão "limpas"
+
+        String[] arrayAux = new String[]{"1", "Testes metabólicos"};
+        intent.putExtra(EXTRA_MESSAGE, arrayAux);
+
         startActivity(intent);
     }
 

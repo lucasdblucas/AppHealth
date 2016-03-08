@@ -31,7 +31,6 @@ public class activity_principal extends AppCompatActivity
     private NavigationView navigationView;
 
     //conteudo de Intent
-    public final static String EXTRA_MESSAGE = "com.ufpi.estagio.apphealth.MESSAGE";
 
     //componentes da listView
     private List<String> nomes_avaliados;

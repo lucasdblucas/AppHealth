@@ -47,7 +47,7 @@ public class tela_NovaAvaliacao extends AppCompatActivity {
         //reaproveitada e todas as activitys acima dela na pilhas
         //serão "limpas"
 
-        String[] arrayAux = new String[]{"1", "Testes metabólicos"};
+        String[] arrayAux = new String[]{"1", "Testes metabólicos", "Testes Aeróbicos"};
         intent.putExtra(EXTRA_MESSAGE, arrayAux);
 
         startActivity(intent);

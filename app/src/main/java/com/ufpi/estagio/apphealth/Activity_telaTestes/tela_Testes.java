@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.ufpi.estagio.apphealth.Activity_telaTestes.CardFragment;
 import com.ufpi.estagio.apphealth.Activity_telaTestes.ItemCard;
+import com.ufpi.estagio.apphealth.FimTeste_tela.FimTeste_activity;
 import com.ufpi.estagio.apphealth.R;
 
 import java.util.ArrayList;
@@ -131,11 +132,13 @@ public class tela_Testes extends AppCompatActivity {
         auxHash_04.put("6Observações", "Lembrando ao avaliado que este é um teste de tempo e que o objetivo é caminhar o mais rapidamente possível " +
                 "(sem correr) em volta do cone e voltar para a cadeira");
         auxHash_04.put("7Resultados", "O campo resultados deve ser preenchido com o melhor escore/melhor tempo");
+
         ListaTestes.put("4", auxHash_04);
+
 
         HashMap<String, String> auxHash_05 = new HashMap<String, String>();
 
-        auxHash_05.put("1Força muscular dos membros superiores", "Mensura indiretamente a força dos membros superiores quando não se tem à disposição" +
+        auxHash_05.put("1Flexão de cotovelo", "Mensura indiretamente a força dos membros superiores quando não se tem à disposição" +
                 " um dinamômetro manual.");
         auxHash_05.put("2Procedimentos", "O teste é realizado com a mão dominante do avaliado, registrando-se as repetições corretas realizadas" +
                 "em 30 segundos");
@@ -145,6 +148,56 @@ public class tela_Testes extends AppCompatActivity {
         auxHash_05.put("5Resultados", "O campo resultados deve ser preenchido com o número de repetições realizadas em 30 segundo.");
 
         ListaTestes.put("5", auxHash_05);
+
+        HashMap<String, String> auxHash_06 = new HashMap<String, String>();
+
+        auxHash_06.put("1Teste de sentar da cadeira em 30 segundos", "Mensura a força dos membros inferiores.");
+        auxHash_06.put("2Procedimentos", "O teste começa com o avaliado sentado, os braços cruzados contra o tórax. Ao sinal, ele deve levantar-se. São " +
+                "contadas as repetições corretas em um tempo de 30 sgundos.");
+        auxHash_06.put("3Precauções", "O avaliado deve realizar de uma a três vezes o movimento antes do início do teste, para familiarização. Por " +
+                "segurança, deve-se utilizar cadeira com encosto e apoiada na parece.");
+        auxHash_06.put("4Resultados", "O campo resultados deve ser preenchido com o número de repetições realizadas em 30 segundo.");
+
+        ListaTestes.put("6", auxHash_06);
+
+        HashMap<String, String> auxHash_07 = new HashMap<String, String>();
+
+        auxHash_07.put("1Teste de sentar e alcançar", "Mensura a flexibilidade dos membros inferiores.");
+        auxHash_07.put("2Instrumentos", "Cadeira com encosto e sem braços a uma altura de, aproximadamente, 43cm até o assento e uma régua de " +
+                "45cm");
+        auxHash_07.put("3Organização dos instrumentos", "Pora razões de segurança, deve-se colocar a cadeira contra uma parede, de forma que se mantenha est´vel " +
+                "(não deslize para a frente) quando o avaliado se sentar na respectiva extremidade.");
+        auxHash_07.put("4Procedimentos", "O ponto aproximado entre a linha inguinal e os glúteos deve estar paralelo ao assento da cadeira. O avaliado" +
+                " deve manter um joelho flexionado e o pé no chão. Com os joelhosparalelos, voltados para a frente, o participante estende a outra perna (" +
+                "a perna preferida_ à frente do quadril, com o calcanhar no cão e dorsiflexão plantar a aproximadamente 90°. O avaliador deve ficar próximo ao " +
+                "avaliado. Com a perna estendida (porém, não hiperestendida), o avaliado inclina-se lentamente para a frente, mantendo a coluna o mais ereta" +
+                " possível e a cabeça alinhada com a coluna. O avaliado tenta tocar os dedos dos pés escorregandoas mãos, uma em cima da outra, com as pontas dos dedos médios, na " +
+                "perna estendida.\nA posição deve ser mantida por dois egundos. Se o joelho estendido começar a flexionar, pedir ao avaliado para sentar de volta, " +
+                "lentamente, até que o joelho esteja estendido. Deve-se lembrar ao avaliado de expirar à medida que se inclina para frente, evitando saltos e movimentos " +
+                "forçados rápidos e nunca alongando a ponto de sentir dor. Seguindoa demonstração, peça ao avaliado que determine qual é a sua perna preferida - " +
+                "a que produz melhor escore. Dê-lhe então duas tentativas (alongamento) nessa perna, seguidas por duas provas de teste.");
+        auxHash_07.put("5Resultados", "Usando uma regua de 45cm, o valiador registra a distância (cm) até os dedos dos pés (resultado mínimo) ou " +
+                "distância (cm) que se consegue alcançar para além dos dedos dos pés (resultado máximo). O meio dos dedo grande do pé na estremidade do sapato" +
+                " representa o ponto zero. Registrar ambos os valores encontrados, com a aproximação de 1cm, e fazer um círculo sobre o melhor resultado, " +
+                "utilizado para avaliar o desempenho.");
+
+        ListaTestes.put("7", auxHash_07);
+
+        HashMap<String, String> auxHash_08 = new HashMap<String, String>();
+        //verificar se o resultado desta pode ser diferente (pode ter que mudar a tela)
+        auxHash_08.put("1Teste de alcançar atrás das Costas", "Mensura a flexibilidade dos membros superiores.");
+        auxHash_08.put("2Instrumentos", "régua de 45,7cm");
+        auxHash_08.put("3Procedimentos", "Em pé, o avaqliado coloca a mão preferida sobre o mesmo ombro, a palma aberta e os dedos estendidos, alcançando " +
+                "o meio das costas tanto quanto possível (cúbito apontado para cima). A mão do outro braço esta colocada atrás das costas, a palma para cima" +
+                ", alcançando para cima o mais distante possível, na tentariva de tocar ou sobrepor os dedos médios estendidos de ambas as mãos. Sem mover as mão do " +
+                "avaliado, o avaliador ajuda a verificar se os dedos médios de cada mão estão direcionado um ao outro. Não é permitido ao avaliado agarrar seus dedos" +
+                "unidos e puxar. Seguindo a demonstração, o avaliado determina a mão preferida e são feitas duas tentativas de aprendizagem, seguidas pelo teste (duas" +
+                "tentativas).");
+        auxHash_08.put("4Resultados", "A distância da sobreposição ou a distância entre as ponstas dos dedos médios é a medida ao centímetro mais próximo. " +
+                "Os resultados negativos (-) representam a distância mais curta entre os dedos médios; os resultados positivos (+) representam a medida da sobreposição dos" +
+                "dedos médios. Registram-se as duas medidas. O \"melhor\" valor é usado para medir o desempenho. Os sinais (-) e (+) devem ser marcados na ficha de pontuação");
+
+        ListaTestes.put("8", auxHash_08);
     }
 
     public List<ItemCard> getCards(){
@@ -177,28 +230,54 @@ public class tela_Testes extends AppCompatActivity {
     }
 
     public void onClick_proximoTeste(View view){
-        Intent intent = new Intent( view.getContext(), tela_Testes.class);
+        Intent intent;
         String type = new String();
         String id_str = new String();
 
-        if(ID_tela.equals("1") || ID_tela.equals("2") || ID_tela.equals("3") ){
-            int id_int = Integer.parseInt(ID_tela) +1;
-            id_str = Integer.toString(id_int);
-            type = "Testes metabólicos";
-            subTitulo_tela = "Testes aeróbicos";
+        if(ID_tela.equals("8")) {
+            intent = new Intent( view.getContext(), FimTeste_activity.class);
+            startActivity(intent);
         }
-        if(ID_tela.equals("4") || ID_tela.equals("5")){
-            int id_int = Integer.parseInt(ID_tela) +1;
-            id_str = Integer.toString(id_int);
-            type = "Testes neuromotores";
-            subTitulo_tela = "Força muscalar dos membros superiores";
+        else{
+            intent = new Intent( view.getContext(), tela_Testes.class);
+            if (ID_tela.equals("1") || ID_tela.equals("2") || ID_tela.equals("3")) {
+                int id_int = Integer.parseInt(ID_tela) + 1;
+                id_str = Integer.toString(id_int);
+                type = "Testes metabólicos";
+                subTitulo_tela = "Testes aeróbicos";
+            }
+            if (ID_tela.equals("4")) {
+                int id_int = Integer.parseInt(ID_tela) + 1;
+                id_str = Integer.toString(id_int);
+                type = "Testes neuromotores";
+                subTitulo_tela = "Força muscalar dos membros superiores";
+            }
+            if (ID_tela.equals("5")) {
+                int id_int = Integer.parseInt(ID_tela) + 1;
+                id_str = Integer.toString(id_int);
+                type = "Testes neuromotores";
+                subTitulo_tela = "Força muscalar dos membros inferiores";
+            }
+            if (ID_tela.equals("6")) {
+                int id_int = Integer.parseInt(ID_tela) + 1;
+                id_str = Integer.toString(id_int);
+                type = "Testes neuromotores";
+                subTitulo_tela = "Flexibilidade dos membros inferiores";
+            }
+            if (ID_tela.equals("7")) {
+                int id_int = Integer.parseInt(ID_tela) + 1;
+                id_str = Integer.toString(id_int);
+                type = "Testes neuromotores";
+                subTitulo_tela = "Flexibilidade dos membros superiores";
+            }
+            String[] arrayAux = new String[]{id_str, type, subTitulo_tela};
+
+            intent.putExtra(EXTRA_MESSAGE, arrayAux);
+
+            startActivity(intent);
+            //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            //      .setAction("Action", null).show();
+
         }
-        String[] arrayAux = new String[]{id_str, type, subTitulo_tela};
-
-        intent.putExtra(EXTRA_MESSAGE, arrayAux);
-
-        startActivity(intent);
-        //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-        //      .setAction("Action", null).show();
     }
 }

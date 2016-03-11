@@ -35,7 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_telaTestes.tela_Testes"></activity>
+        <activity android:name=".Activity_telaTestes.tela_Testes" />
+        <activity android:name=".FimTeste_tela.FimTeste_activity"></activity>
     </application>
 
 </manifest>

@@ -43,7 +43,10 @@
     <string name="button_Resultados">Resultados :</string>
     <string name="button_Proximo">Proximo Teste</string>
 
-
+    <!--strings tela fim do Teste-->
+    <string name="text_FimdoTeste">Fim do Teste</string>
+    <string name="button_SalvarTeste">Salvar Teste</string>
+    <string name="button_SalvarEEnviarTeste">Salvar E Enviar</string>
 
     <string name="title_activity_iniciar_app_health">Iniciar_appHealth</string>
 </resources>

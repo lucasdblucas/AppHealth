@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.ufpi.estagio.apphealth.ConsultaAvaliacao_tela.ConsultaAvaliacao_tela;
 import com.ufpi.estagio.apphealth.R;
 import com.ufpi.estagio.apphealth.NovaAvaliacao_tela.tela_NovaAvaliacao;
 
@@ -135,9 +136,12 @@ public class activity_principal extends AppCompatActivity
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        String nome_avaliado = avaliacoes.get(position).getNome_avaliado();
-        Toast.makeText(getApplicationContext(), "" + nome_avaliado,
-                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent (this, ConsultaAvaliacao_tela.class);
+        startActivity(intent);
+
+        //String nome_avaliado = avaliacoes.get(position).getNome_avaliado();
+        //Toast.makeText(getApplicationContext(), "" + nome_avaliado,
+        //        Toast.LENGTH_SHORT).show();
     }
 
     private void inicializarListView(){

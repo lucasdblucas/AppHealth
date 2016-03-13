@@ -48,5 +48,9 @@
     <string name="button_SalvarTeste">Salvar Teste</string>
     <string name="button_SalvarEEnviarTeste">Salvar E Enviar</string>
 
+    <!--Strings da tela consultas-->
+    <string name="check_Enviado">Avaliação Enviada</string>
+    <string name="button_Enviar">Enviar</string>
+
     <string name="title_activity_iniciar_app_health">Iniciar_appHealth</string>
 </resources>

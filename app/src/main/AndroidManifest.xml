@@ -36,7 +36,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity_telaTestes.tela_Testes" />
-        <activity android:name=".FimTeste_tela.FimTeste_activity"></activity>
+        <activity android:name=".FimTeste_tela.FimTeste_activity" />
+        <activity android:name=".ConsultaAvaliacao_tela.ConsultaAvaliacao_tela"></activity>
     </application>
 
 </manifest>

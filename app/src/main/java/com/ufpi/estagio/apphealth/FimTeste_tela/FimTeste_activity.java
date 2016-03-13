@@ -10,7 +10,7 @@ import com.ufpi.estagio.apphealth.Fragmentos_Dialogos.Fragmento_Dialogo;
 import com.ufpi.estagio.apphealth.R;
 
 public class FimTeste_activity extends AppCompatActivity {
-
+    public final static String EXTRA_MESSAGE_DIALOG = "com.ufpi.estagio.apphealth.MESSAGE_DIALOG";
     Button button;
 
     @Override
@@ -23,14 +23,13 @@ public class FimTeste_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DialogFragment dialog = new Fragmento_Dialogo();
-                dialog.show(getSupportFragmentManager(), "Mensagen_erro");
+                String[] aux = new String[]{"Mensagem de confirmação", "Avaliação enviada com Sucesso!", "activity_principal"};
+                getIntent().putExtra(EXTRA_MESSAGE_DIALOG, aux);
+
+                dialog.show(getSupportFragmentManager(), "Mensagem_Confirmacao");
             }
         });
 
     }
 
-
-    //public void onClickSalvaEEnviar(View view){
-
-   // }
 }

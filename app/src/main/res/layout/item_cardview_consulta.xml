@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardElevation="2dp"
+    app:cardMaxElevation="3dp"
+    app:cardCornerRadius="2dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_TituloConsulta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="14dp"
+            android:paddingLeft="14dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:textSize="22sp"
+            android:textColor="@color/colorAccent"
+            android:text="teste"/>
+
+
+        <View
+            android:id="@+id/view_DividerConsulta"
+            android:layout_marginTop="20dp"
+            android:layout_alignBottom="@+id/text_TituloConsulta"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/silver"/>
+
+        <TextView
+            android:id="@+id/text_ConteudoConsulta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_DividerConsulta"
+            android:layout_marginTop="14dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:text="teste"/>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

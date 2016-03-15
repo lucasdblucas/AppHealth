@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,7 +18,12 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.ufpi.estagio.apphealth.BancoDeDados_Local.Avaliacao;
+import com.ufpi.estagio.apphealth.BancoDeDados_Local.Avaliado;
+import com.ufpi.estagio.apphealth.BancoDeDados_Local.Conver_App_Banco;
+import com.ufpi.estagio.apphealth.BancoDeDados_Local.Usuario;
 import com.ufpi.estagio.apphealth.ConsultaAvaliacao_tela.ConsultaAvaliacao_tela;
+import com.ufpi.estagio.apphealth.Iniciar_tela.Iniciar_appHealth;
 import com.ufpi.estagio.apphealth.R;
 import com.ufpi.estagio.apphealth.NovaAvaliacao_tela.tela_NovaAvaliacao;
 
@@ -32,18 +38,39 @@ public class activity_principal extends AppCompatActivity
     private NavigationView navigationView;
 
     //conteudo de Intent
+    private Usuario usuario;
 
     //componentes da listView
-    private List<String> nomes_avaliados;
-    private String[] tipoStatus_envio_cliente;
-    private TypedArray profile_pics;
+    private List<Avaliacao> todas_avaliacoes;
     private List<ItemLinha> avaliacoes;
+
+    private TypedArray profile_pics;
+
     private ListView myListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+        //recuperar informações de usuario
+        Intent intentExtras = getIntent();
+        Bundle extraBundle = intentExtras.getExtras();
+
+        if(extraBundle != null && !extraBundle.isEmpty()){
+            if(extraBundle.containsKey(Iniciar_appHealth.EXTRA_MESSAGE_USUARIOID)) {
+                String[] arrayString = extraBundle.getStringArray(Iniciar_appHealth.EXTRA_MESSAGE_USUARIOID);
+
+                if(arrayString != null && arrayString.length > 0) {
+                    Log.i("MENSAGEM_DO_BANCO", "entreamos aqui");
+                    usuario = new Usuario();
+                    usuario.setID(Long.parseLong(arrayString[0]));
+                    usuario.setNome(arrayString[1]);
+                    usuario.setSenha(arrayString[2]);
+
+                }else Log.i("MENSAGEM_DO_BANCO", "Array recuperado não possui posições");
+            }else Log.i("MENSAGEM_DO_BANCO", "bundley não possui mensagem EXTRA_MESSAGE_USUARIOID");
+        }else Log.i("MENSAGEM_DO_BANCO", "bundley empty");
 
         //consultar o banco de dados e retornar as avlaições existentes
         inicializarListView();
@@ -58,7 +85,8 @@ public class activity_principal extends AppCompatActivity
             public void onClick(View view) {
 
                 Intent intent = new Intent( view.getContext(), tela_NovaAvaliacao.class);
-                //intent.putExtra(EXTRA_MESSAGE, new String());
+                intent.putExtra(Iniciar_appHealth.EXTRA_MESSAGE_USUARIOID, new String[]{""+usuario.getID()
+                    , usuario.getNome(), usuario.getSenha()});
                 startActivity(intent);
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                   //      .setAction("Action", null).show();
@@ -147,32 +175,25 @@ public class activity_principal extends AppCompatActivity
     private void inicializarListView(){
         avaliacoes = new ArrayList<>();
 
-        /*nomes avaliados mais adiante será fornecido pelo banco de dados
-        a principio enquanto o banco de dados não é implementado, essas informações serão
-        iniciadas estaticamente*/
-        nomes_avaliados = new ArrayList<>();
-        nomes_avaliados. add("Lucas Daniel");
-        nomes_avaliados. add("Dona Rosa");
-        nomes_avaliados. add("Seu Raimundo");
-        nomes_avaliados. add("Seu Domingos");
-        nomes_avaliados. add("Dona Lurdes");
-        nomes_avaliados. add("Lucas Daniel");
-        nomes_avaliados. add("Dona Rosa");
-        nomes_avaliados. add("Seu Raimundo");
-        nomes_avaliados. add("Seu Domingos");
-        nomes_avaliados. add("Dona Lurdes");
-        nomes_avaliados. add("Lucas Daniel");
-        nomes_avaliados. add("Dona Rosa");
-        nomes_avaliados. add("Seu Raimundo");
-        nomes_avaliados. add("Seu Domingos");
-        nomes_avaliados. add("Dona Lurdes");
+        Conver_App_Banco banco = new Conver_App_Banco(this);
+        todas_avaliacoes = banco.getAvaliacoesUmUsuario(usuario);
+
 
         profile_pics = getResources().obtainTypedArray(R.array.profile_pics);
-        tipoStatus_envio_cliente = getResources().getStringArray(R.array.statues_envio_cliente);
 
-        for(int i=0; i<nomes_avaliados.size(); i++){
-            ItemLinha item_aux = new ItemLinha(nomes_avaliados.get(i), profile_pics.getResourceId(i%2, -1), "Enviado");
-            avaliacoes.add(item_aux);
+        int i = 0;
+        if(todas_avaliacoes.size() >0) {
+
+            for (Avaliacao avaliacao : todas_avaliacoes) {
+                Avaliado avaliado =  banco.consultarAvaliadoByID(avaliacao);
+                if(avaliacao.getStatus_Envio().equals("Enviado")) i = 0;
+                else i = 1;
+                ItemLinha item_aux = new ItemLinha(avaliado.getNome_avaliado(),
+                        profile_pics.getResourceId(i, -1), avaliacao.getStatus_Envio());
+               avaliacoes.add(item_aux);
+
+
+            }
         }
 
         myListView = (ListView) findViewById(R.id.list_avaliacao);
@@ -182,6 +203,5 @@ public class activity_principal extends AppCompatActivity
         profile_pics.recycle();
 
         myListView.setOnItemClickListener(this);
-        //myListView.setOnLongClickListener();
     }
 }

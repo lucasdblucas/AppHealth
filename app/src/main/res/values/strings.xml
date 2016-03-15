@@ -52,5 +52,12 @@
     <string name="check_Enviado">Avaliação Enviada</string>
     <string name="button_Enviar">Enviar</string>
 
+    <!--String da tela cadastro-->
+    <string name="hint_Nome">Usuário</string>
+    <string name="hint_SenhaCadastro">Senha</string>
+    <string name="hint_ConfirmarSenha">Confirmar Senha</string>
+    <string name="button_CadastrarBanco">Cadastrar</string>
+
+
     <string name="title_activity_iniciar_app_health">Iniciar_appHealth</string>
 </resources>

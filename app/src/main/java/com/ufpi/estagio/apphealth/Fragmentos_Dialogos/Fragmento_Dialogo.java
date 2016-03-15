@@ -9,7 +9,9 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
 import com.ufpi.estagio.apphealth.Avaliacoes_tela.activity_principal;
+import com.ufpi.estagio.apphealth.BancoDeDados_Local.Usuario;
 import com.ufpi.estagio.apphealth.FimTeste_tela.FimTeste_activity;
+import com.ufpi.estagio.apphealth.Iniciar_tela.Iniciar_appHealth;
 import com.ufpi.estagio.apphealth.R;
 
 /**
@@ -20,6 +22,7 @@ import com.ufpi.estagio.apphealth.R;
 public class Fragmento_Dialogo extends DialogFragment {
     public final static String EXTRA_MESSAGE_DIALOG = "com.ufpi.estagio.apphealth.MESSAGE_DIALOG";
     private String activity_volta;
+    Usuario usuario;
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         //super.onCreateDialog(savedInstanceState);
@@ -50,11 +53,29 @@ public class Fragmento_Dialogo extends DialogFragment {
             }
         }
 
+
+        if(extraBundle != null && !extraBundle.isEmpty()){
+            if(extraBundle.containsKey(Iniciar_appHealth.EXTRA_MESSAGE_USUARIOID)) {
+                String[] arrayString = extraBundle.getStringArray(Iniciar_appHealth.EXTRA_MESSAGE_USUARIOID);
+
+                if(arrayString != null && arrayString.length > 0) {
+                    Log.i("MENSAGEM_DO_BANCO_02", "entreamos aqui");
+                    usuario = new Usuario();
+                    usuario.setID(Long.parseLong(arrayString[0]));
+                    usuario.setNome(arrayString[1]);
+                    usuario.setSenha(arrayString[2]);
+
+                }else Log.i("MENSAGEM_DO_BANCO_02", "Array recuperado não possui posições");
+            }else Log.i("MENSAGEM_DO_BANCO_02", "bundley não possui mensagem EXTRA_MESSAGE_USUARIOID");
+        }else Log.i("MENSAGEM_DO_BANCO_02", "bundley empty");
+
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
 
                 if(activity_volta.equals("activity_principal")) {
                     Intent intent = new Intent(getActivity(), activity_principal.class);
+                    intent.putExtra(Iniciar_appHealth.EXTRA_MESSAGE_USUARIOID, new String[]{""+usuario.getID()
+                            , usuario.getNome(), usuario.getSenha()});
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }

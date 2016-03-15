@@ -6,39 +6,48 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
-import com.ufpi.estagio.apphealth.Activity_telaTestes.CardFragment;
-import com.ufpi.estagio.apphealth.Activity_telaTestes.ItemCard;
+import com.ufpi.estagio.apphealth.BancoDeDados_Local.Avaliacao;
+import com.ufpi.estagio.apphealth.BancoDeDados_Local.Conver_App_Banco;
+import com.ufpi.estagio.apphealth.BancoDeDados_Local.Usuario;
 import com.ufpi.estagio.apphealth.FimTeste_tela.FimTeste_activity;
+import com.ufpi.estagio.apphealth.Iniciar_tela.Iniciar_appHealth;
+import com.ufpi.estagio.apphealth.NovaAvaliacao_tela.tela_NovaAvaliacao;
 import com.ufpi.estagio.apphealth.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
 
 public class tela_Testes extends AppCompatActivity {
 
-    public final static String EXTRA_MESSAGE = "com.ufpi.estagio.apphealth.MESSAGE";
     public static HashMap<String, HashMap<String, String>> ListaTestes;
     public String ID_tela = "1";
     public String titulo_tela = "";
     public String subTitulo_tela = "";
+
+    private Avaliacao avaliacao;
+    private Conver_App_Banco banco;
+
+    private EditText edit_Resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela__testes);
 
+        edit_Resultado = (EditText) findViewById(R.id.field_Resultados);
+
         Intent intentExtras = getIntent();
         Bundle extraBundle = intentExtras.getExtras();
 
-        if(!extraBundle.isEmpty()){
-            if(extraBundle.containsKey(EXTRA_MESSAGE)) {
-                String[] arrayString = extraBundle.getStringArray(EXTRA_MESSAGE);
+        if(extraBundle != null && !extraBundle.isEmpty()){
+            if(extraBundle.containsKey(tela_NovaAvaliacao.EXTRA_MESSAGE)) {
+                String[] arrayString = extraBundle.getStringArray(tela_NovaAvaliacao.EXTRA_MESSAGE);
 
-                if(arrayString.length > 0) {
+                if(arrayString!= null && arrayString.length > 0) {
                     Log.i("MENSAGEM", "entreamos aqui");
                     ID_tela = arrayString[0];
                     titulo_tela = arrayString[1];
@@ -50,6 +59,15 @@ public class tela_Testes extends AppCompatActivity {
                         getSupportActionBar().setTitle(titulo_tela);
                         getSupportActionBar().setSubtitle(subTitulo_tela);
                     }
+                }
+            }
+            if(extraBundle.containsKey(tela_NovaAvaliacao.EXTRA_MESSAGE_AVALIACAOID)) {
+                String[] arrayString_02 = extraBundle.getStringArray(tela_NovaAvaliacao.EXTRA_MESSAGE_AVALIACAOID);
+
+                if(arrayString_02!= null && arrayString_02.length > 0) {
+                    Log.i("MENSAGEM_AVALIACAOID", "verificar recebimento da avaliacao_ID");
+                    banco = new Conver_App_Banco(this);
+                    avaliacao = banco.consultarAvaliacaoByID(Long.parseLong(arrayString_02[0]));
                 }
             }
         }
@@ -234,45 +252,77 @@ public class tela_Testes extends AppCompatActivity {
         String type = new String();
         String id_str = new String();
 
+        String[] aux = edit_Resultado.getText().toString().split(",");
+        String aux2;
+        if(aux.length > 1) {
+            aux2 = aux[0]+"."+aux[1];
+        }else{
+            aux2 = edit_Resultado.getText().toString();
+        }
+
         if(ID_tela.equals("8")) {
+            avaliacao.setTeste_08(Float.parseFloat(aux2));
+            banco.atualizarAvaliacao(avaliacao);
+
+            CalcularResultados r = new CalcularResultados(this, avaliacao);
+
+            Usuario usuario = banco.consultarUsuarioByID(avaliacao.getID_Avaliador());
             intent = new Intent( view.getContext(), FimTeste_activity.class);
+            intent.putExtra(Iniciar_appHealth.EXTRA_MESSAGE_USUARIOID, new String[]{""+usuario.getID()
+                    , usuario.getNome(), usuario.getSenha()});
             startActivity(intent);
         }
         else{
             intent = new Intent( view.getContext(), tela_Testes.class);
             if (ID_tela.equals("1") || ID_tela.equals("2") || ID_tela.equals("3")) {
+                if(ID_tela.equals("1")) avaliacao.setTeste_01(Float.parseFloat(aux2));
+                if(ID_tela.equals("2")) avaliacao.setTeste_02(Float.parseFloat(aux2));
+                if(ID_tela.equals("3")) avaliacao.setTeste_03(Float.parseFloat(aux2));
+
                 int id_int = Integer.parseInt(ID_tela) + 1;
                 id_str = Integer.toString(id_int);
                 type = "Testes metabólicos";
                 subTitulo_tela = "Testes aeróbicos";
             }
             if (ID_tela.equals("4")) {
+                avaliacao.setTeste_04(Float.parseFloat(aux2));
+
                 int id_int = Integer.parseInt(ID_tela) + 1;
                 id_str = Integer.toString(id_int);
                 type = "Testes neuromotores";
                 subTitulo_tela = "Força muscalar dos membros superiores";
             }
             if (ID_tela.equals("5")) {
+                avaliacao.setTeste_05(Float.parseFloat(aux2));
+
                 int id_int = Integer.parseInt(ID_tela) + 1;
                 id_str = Integer.toString(id_int);
                 type = "Testes neuromotores";
                 subTitulo_tela = "Força muscalar dos membros inferiores";
             }
             if (ID_tela.equals("6")) {
+                avaliacao.setTeste_06(Float.parseFloat(aux2));
+
                 int id_int = Integer.parseInt(ID_tela) + 1;
                 id_str = Integer.toString(id_int);
                 type = "Testes neuromotores";
                 subTitulo_tela = "Flexibilidade dos membros inferiores";
             }
             if (ID_tela.equals("7")) {
+                avaliacao.setTeste_07(Float.parseFloat(aux2));
+
                 int id_int = Integer.parseInt(ID_tela) + 1;
                 id_str = Integer.toString(id_int);
                 type = "Testes neuromotores";
                 subTitulo_tela = "Flexibilidade dos membros superiores";
             }
+
+            banco.atualizarAvaliacao(avaliacao);
+
             String[] arrayAux = new String[]{id_str, type, subTitulo_tela};
 
-            intent.putExtra(EXTRA_MESSAGE, arrayAux);
+            intent.putExtra(tela_NovaAvaliacao.EXTRA_MESSAGE, arrayAux);
+            intent.putExtra(tela_NovaAvaliacao.EXTRA_MESSAGE_AVALIACAOID, new String[]{""+avaliacao.getID()});
 
             startActivity(intent);
             //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

@@ -38,7 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/field_Usuario"
         android:layout_marginTop="10dp"
-        android:hint="@string/hint_Senha"/>
+        android:hint="@string/hint_Senha"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/button_Entrar"
@@ -59,6 +60,7 @@
         android:layout_marginTop="10dp"
         android:background="@color/colorAccent"
         android:text="@string/button_Cadastrar"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:onClick="onClick_IniciarCadastro"/>
 
 </RelativeLayout>
